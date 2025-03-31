@@ -1,4 +1,19 @@
-title: Your Site Title
-theme: minima  # Default Jekyll theme
+title: programming docs
+url: "https://thanakijwanavit.github.io"
+markdown: kramdown
+
+include: [".htaccess"]
+exclude: ["node_modules", "Gemfile", "Gemfile.lock"]
+
+# Enable plugins (GitHub Pages-safe)
 plugins:
-  - jekyll-optional-front-matter
+  - jekyll-paginate
+  - jekyll-sitemap
+
+# Defaults for all pages
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: "page"
+      toc: true
