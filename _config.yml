@@ -1,0 +1,4 @@
+title: Your Site Title
+theme: minima  # Default Jekyll theme
+plugins:
+  - jekyll-optional-front-matter
