@@ -1,30 +1,20 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Markdown Files</title>
-    <script>
-        async function loadFiles() {
-            let response = await fetch("https://api.github.com/repos/thanakijwanavit/programming-docs/contents/");
-            let files = await response.json();
-            let list = document.getElementById("file-list");
-            
-            files.forEach(file => {
-                if (file.name.endsWith(".md")) {
-                    let li = document.createElement("li");
-                    let a = document.createElement("a");
-                    a.href = file.name;
-                    a.textContent = file.name;
-                    li.appendChild(a);
-                    list.appendChild(li);
-                }
-            });
-        }
-        window.onload = loadFiles;
-    </script>
-</head>
-<body>
-    <h1>Markdown Files</h1>
-    <ul id="file-list"></ul>
-</body>
-</html>
+---
+layout: default
+title: Auto-Index
+---
 
+# All Documents
+
+{% raw %}
+<ul>
+  {% assign all_md = site.pages | where_exp: "item", "item.path contains '.md'" | sort: "name" %}
+  {% for page in all_md %}
+    {% unless page.name == "index.md" %}
+      <li>
+        <a href="{{ page.url | replace: '.md', '' }}">{{ page.title | default: page.name }}</a>
+        <small>(Last modified: {{ page.modified_time | date: "%b %d, %Y" }})</small>
+      </li>
+    {% endunless %}
+  {% endfor %}
+</ul>
+{% endraw %}

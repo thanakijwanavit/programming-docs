@@ -2,18 +2,22 @@ title: programming docs
 url: "https://thanakijwanavit.github.io"
 markdown: kramdown
 
-include: [".htaccess"]
-exclude: ["node_modules", "Gemfile", "Gemfile.lock"]
-
-# Enable plugins (GitHub Pages-safe)
+# Enable these plugins (GitHub Pages compatible)
 plugins:
-  - jekyll-paginate
-  - jekyll-sitemap
+  - jekyll-optional-front-matter
+  - jekyll-readme-index
 
-# Defaults for all pages
+# Process all markdown files
+include:
+  - "*.md"
+  - "*.markdown"
+
+# Default front matter
 defaults:
   - scope:
       path: ""
+      type: pages
     values:
-      layout: "page"
-      toc: true
+      layout: default
+      modified_time: 2024-05-20
+
