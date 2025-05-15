@@ -2,7 +2,7 @@
 
 ## List of Markdown Files
 - [summary](summary.md)
-- [sam](sam.md)
 - [pynamodb](pynamodb.md)
+- [sam](sam.md)
 
 *Automatically generated index*
