@@ -1,8 +1,8 @@
 # Documentation Index
 
 ## List of Markdown Files
-- [summary](summary.md)
 - [pynamodb](pynamodb.md)
+- [summary](summary.md)
 - [sam](sam.md)
 
 *Automatically generated index*
